@@ -116,7 +116,7 @@ fun HomeScreen(
             TopAppBar(
                 title = { Text("Famly") },
                 actions = {
-//                    IconButton(onClick = onOpenTree) { Text("🌳") }
+                    IconButton(onClick = onOpenTree) { Text("🌳") }
                     IconButton(onClick = { menuOpen = true }) { Icon(Icons.Default.MoreVert, "Menu") }
                     DropdownMenu(expanded = menuOpen, onDismissRequest = { menuOpen = false }) {
                         DropdownMenuItem(text = { Text("Backup ke file") }, onClick = {

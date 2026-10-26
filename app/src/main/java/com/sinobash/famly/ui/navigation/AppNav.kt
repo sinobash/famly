@@ -9,6 +9,7 @@ import androidx.navigation.navArgument
 import com.sinobash.famly.ui.home.HomeScreen
 import com.sinobash.famly.ui.person.PersonDetailScreen
 import com.sinobash.famly.ui.person.PersonEditScreen
+import com.sinobash.famly.ui.tree.TreeScreen
 
 object Routes {
     const val HOME = "home"
@@ -32,12 +33,12 @@ fun AppNav() {
                 onOpenTree = { nav.navigate(Routes.TREE) }
             )
         }
-//        composable(Routes.TREE) {
-//            TreeScreen(
-//                onBack = { nav.popBackStack() },
-//                onOpenPerson = { nav.navigate(Routes.detail(it)) }
-//            )
-//        }
+        composable(Routes.TREE) {
+            TreeScreen(
+                onBack = { nav.popBackStack() },
+                onOpenPerson = { nav.navigate(Routes.detail(it)) }
+            )
+        }
         composable(
             Routes.DETAIL,
             arguments = listOf(navArgument("personId") { type = NavType.LongType })
